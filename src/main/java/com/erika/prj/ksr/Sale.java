@@ -1,4 +1,4 @@
-package com.erika.projektas.ksrs;
+package com.erika.prj.ksr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
