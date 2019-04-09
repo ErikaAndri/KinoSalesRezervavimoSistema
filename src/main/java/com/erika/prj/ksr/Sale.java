@@ -1,32 +1,25 @@
 package com.erika.prj.ksr;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Sale {
 
 
     private String pavadinimas;
-    private List<Filmas> filmai = new ArrayList<Filmas>();
-    private Rezervacija[] sedimosVietos;
+    private int vietuKiekis;
 
-    public Sale(String pavadinimas, int salesVietuKiekis, Filmas... filmai) {
+
+    public Sale(String pavadinimas, int salesVietuKiekis) {
 
         this.pavadinimas = pavadinimas;
-        this.filmai.addAll(Arrays.asList(filmai));
-        this.sedimosVietos = new Rezervacija[salesVietuKiekis];
+        this.vietuKiekis = salesVietuKiekis;
+    }
+
+    public int getVietuKiekis() {
+        return vietuKiekis;
     }
 
     public String getPavadinimas() {
         return pavadinimas;
     }
 
-    public List<Filmas> getFilmai() {
-        return filmai;
-    }
-
-    public Rezervacija[] getSedimosVietos() {
-        return sedimosVietos;
-    }
 }

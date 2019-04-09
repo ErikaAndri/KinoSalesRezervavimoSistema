@@ -5,6 +5,8 @@ public class Rezervacija {
     private Seansas seansas;
     private boolean apmoketa;
 
+    // galima dar priskirti rezervacijos ID, kad vartotojas gautu numeriuka, pagal kuri galima patikrinti
+
     public Rezervacija(Seansas seansas, boolean apmoketa) {
         this.seansas = seansas;
         this.apmoketa = apmoketa;
@@ -18,7 +20,7 @@ public class Rezervacija {
         this.seansas = seansas;
     }
 
-    public boolean isApmoketa() {
+    public boolean Apmoketa() {
         return apmoketa;
     }
 

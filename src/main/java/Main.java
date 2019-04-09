@@ -59,6 +59,4 @@ public class Main {
         kino_filmai[5] = "Mind Game";
         kino_filmai[6] = "Mr. Nobody";
     }
-
-
 }

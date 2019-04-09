@@ -4,13 +4,10 @@ public class Filmas {
 
 
     private String pavadinimas;
-    private boolean jauIvyko;
 
 
-    public Filmas(String pavadinimas, boolean jauIvyko) {
+    public Filmas(String pavadinimas) {
         this.pavadinimas = pavadinimas;
-        this.jauIvyko = jauIvyko;
-
     }
 
     public String getPavadinimas() {
@@ -19,14 +16,6 @@ public class Filmas {
 
     public void setPavadinimas(String pavadinimas) {
         this.pavadinimas = pavadinimas;
-    }
-
-    public boolean isJauIvyko() {
-        return jauIvyko;
-    }
-
-    public void setJauIvyko(boolean jauIvyko) {
-        this.jauIvyko = jauIvyko;
     }
 
 }
