@@ -58,17 +58,27 @@ public class KinoTeatras {
     }
 
     public List<Filmas> filmuTOP(int topDydis) {
-        Map ivykeSeansai = new HashMap();
+        Map<Filmas, Integer> rezPagalFilma = new HashMap<>();
         for (Seansas s : repertuaras) {
             if (s.isJauIvyko()) {
-                ivykeSeansai.put(s, s.getSedimosVietos());
+                Integer filmoRezervacijos = 0;
+                if (rezPagalFilma.containsKey(s.getFilmas())) {
+                    filmoRezervacijos = rezPagalFilma.get(s.getFilmas());
+                }
+                filmoRezervacijos += rezervuotosVietos(s);
+                rezPagalFilma.put(s.getFilmas(), filmoRezervacijos);
             }
         }
-
-        //ieskoti konkretaus filmo ir susideti kiek buvo ispirkta bilietu (panaudoti map'a) ir isrikiuoti;
-        // top filmai - visu ivykusiu filmu seansu rezervaciju kiekis
-
         return null;
+    }
+
+    public int rezervuotosVietos(Seansas s) {          //is eiles tikrina kiek vietu yra uzimta
+        for (int i = 0; i < s.getSedimosVietos().length; i++) {
+            if (s.getSedimosVietos()[i] == null) {
+                return i;
+            }
+        }
+        return 0;
     }
 
 }
