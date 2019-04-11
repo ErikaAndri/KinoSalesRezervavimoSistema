@@ -1,28 +1,29 @@
 package com.erika.prj.ksr;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class KinoTeatras {
 
-    private List<Seansas> repertuaras = new ArrayList<Seansas>();
+    private List<Seansas> repertuaras = new ArrayList<>();
 
     public List<Seansas> getRepertuaras() {
         return repertuaras;
     }
 
     public List<Seansas> rodytiSeansus(boolean rodytiVisus) {
-        List<Seansas> rodytiSeansuSarasa = new ArrayList<Seansas>();
+        List<Seansas> result = new ArrayList<>();
 
-        if (rodytiVisus = true) {
-            return rodytiSeansuSarasa;
-        } else {return null;
+        if (rodytiVisus) {
+            return repertuaras;                                         // grazina pilna repertuaro sarasa
         }
-    }
 
-    // susikurti nauja lista. metodas turi grazinti lista seansu. isideti boolean.
-    // jeigu true - bus rodomi visi ir tie kur ivyko, o jeigu false - rodo tik busimus;
+        for (Seansas s : repertuaras) {
+            if (!s.isJauIvyko()) {
+                result.add(s);                                         //cia ideda i sarasa filma, jeigu jis dar neivyko
+            }
+        }
+        return result;
+    }
 
     public boolean rezervuoti(String id, boolean apmoketa) {
 
@@ -57,10 +58,27 @@ public class KinoTeatras {
     }
 
     public List<Filmas> filmuTOP(int topDydis) {
-
-        //ieskoti konkretaus filmo ir susideti kiek buvo ispirkta bilietu (panaudoti map'a) ir isrikiuoti;
-
+        Map<Filmas, Integer> rezPagalFilma = new HashMap<>();
+        for (Seansas s : repertuaras) {
+            if (s.isJauIvyko()) {
+                Integer filmoRezervacijos = 0;
+                if (rezPagalFilma.containsKey(s.getFilmas())) {
+                    filmoRezervacijos = rezPagalFilma.get(s.getFilmas());
+                }
+                filmoRezervacijos += rezervuotosVietos(s);
+                rezPagalFilma.put(s.getFilmas(), filmoRezervacijos);
+            }
+        }
         return null;
+    }
+
+    public int rezervuotosVietos(Seansas s) {          //is eiles tikrina kiek vietu yra uzimta
+        for (int i = 0; i < s.getSedimosVietos().length; i++) {
+            if (s.getSedimosVietos()[i] == null) {
+                return i;
+            }
+        }
+        return 0;
     }
 
 }
