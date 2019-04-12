@@ -1,4 +1,4 @@
-package com.erika.prj.ksr;
+package com.erika.prj.ksr.Elementai;
 
 
 public class Sale {

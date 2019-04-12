@@ -1,4 +1,6 @@
-package com.erika.prj.ksr;
+package com.erika.prj.ksr.Elementai;
+
+import com.erika.prj.ksr.KTFunkcijos.Rezervacija;
 
 public class Seansas {
 

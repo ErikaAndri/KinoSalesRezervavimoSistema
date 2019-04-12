@@ -1,4 +1,6 @@
-package com.erika.prj.ksr;
+package com.erika.prj.ksr.KTFunkcijos;
+
+import com.erika.prj.ksr.Elementai.Seansas;
 
 public class Rezervacija {
 

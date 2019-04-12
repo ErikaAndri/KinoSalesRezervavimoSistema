@@ -1,4 +1,8 @@
-package com.erika.prj.ksr;
+package com.erika.prj.ksr.KTFunkcijos;
+
+import com.erika.prj.ksr.Elementai.Filmas;
+import com.erika.prj.ksr.Elementai.Seansas;
+import com.erika.prj.ksr.KTFunkcijos.Rezervacija;
 
 import java.util.*;
 
