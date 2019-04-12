@@ -16,7 +16,7 @@ public class Duomenys {
 
         Sale mazoiSale = new Sale("Mažoji salė", 5);
         Sale didziojiSale = new Sale("Didžioji salė", 6);
-        
+
         KinoTeatras vingis = new KinoTeatras();
         vingis.getRepertuaras().add(new Seansas("A123456", mazoiSale, filmoRef, "14:30 val.", false));
         vingis.getRepertuaras().add(new Seansas("V852369", mazoiSale, filmoRef, "12:30 val.", false));
