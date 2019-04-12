@@ -1,7 +1,7 @@
 package com.erika.prj.ksr;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
 public class FilmuPopuliarumas implements Comparable<FilmuPopuliarumas> {
@@ -9,17 +9,12 @@ public class FilmuPopuliarumas implements Comparable<FilmuPopuliarumas> {
     private Filmas filmas;
     private int rezervuotosVietos;
 
-    List<Filmas> filmuPopuliarumas = new ArrayList<>();
-
     FilmuPopuliarumas(Filmas filmas, int rezervuotosVietos) {
         filmas.getPavadinimas();
         this.rezervuotosVietos=rezervuotosVietos;
     }
 
-    @Override
-    public String toString(){
-        return "" + filmas + ": " + rezervuotosVietos;
-    }
+    List<Filmas> filmuPopuliarumas = new ArrayList<>();
 
     @Override
     public int compareTo(FilmuPopuliarumas ats) {
